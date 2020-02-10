@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require('../database');
 
 const ProductSchema = new mongoose.Schema({
     companyId: {

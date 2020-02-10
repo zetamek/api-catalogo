@@ -1,6 +1,17 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/noderest', { useMongoClient: true });
+// Connection info
+const address = 'localhost';
+const database = 'noderest';
+const port = 27017;
+
+mongoose.set('useCreateIndex', true);
+
+mongoose.connect(`mongodb://${address}:${port}/${database}`, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
+
 Promise = global.Promise;
 
-export default mongoose;
+module.exports = mongoose;
